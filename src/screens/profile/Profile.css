@@ -67,7 +67,8 @@ height:50%;
     width:40%;
 }
 .row-one {
-    height:30%;
+    padding-top: 10px;
+    padding-bottom: 10px ;
     align-items: flex-start;
     display:flex;
     font-size: 22px;
@@ -75,14 +76,14 @@ height:50%;
 }
 
 .row-two {
-    height:30%;
+    padding-bottom: 10px ;
     display:flex;
     align-items:center;
     font-size: 18px;
 }
 
 .row-three {
-    height:40%;
+    
     display:flex;
     align-items: flex-end;
     font-size: 24px;
@@ -119,3 +120,7 @@ height:50%;
     clear: both;
     height:100%;
   }
+
+.infoSection{
+    padding-top: 10px;
+}
