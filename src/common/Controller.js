@@ -8,9 +8,7 @@ class Controller extends Component {
 
     constructor() {
         super();
-        this.state = {
-            loggedIn: sessionStorage.getItem("access-token") == null ? false : true
-        }
+        
         this.baseUrl = "https://api.instagram.com/v1/users/self/";
     }
 
@@ -19,8 +17,8 @@ class Controller extends Component {
             <div>
                 <Router>
                     <Route exact path='/' render={(props) => <Login {...props}  baseUrl={this.baseUrl} />} />
-                    <Route path='/home/' render={(props) => this.state.loggedIn ? (<Home {...props} baseUrl={this.baseUrl} />) : (<Redirect to='/' />)} />
-                    <Route path='/profile/' render={(props) => this.state.loggedIn ? (<Profile {...props} baseUrl={this.baseUrl} />) : (<Redirect to='/' />)} />
+                    <Route path='/home/' render={(props) => sessionStorage.getItem("access-token") !== null ? (<Home {...props} baseUrl={this.baseUrl} />) : (<Redirect to='/' />)} />
+                    <Route path='/profile/' render={(props) => sessionStorage.getItem("access-token") !== null ? (<Profile {...props} baseUrl={this.baseUrl} />) : (<Redirect to='/' />)} />
                 </Router>
             </div>
         );
